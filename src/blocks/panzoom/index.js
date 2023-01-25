@@ -41,7 +41,7 @@ export const settings = {
 		const ALLOWED_MEDIA_TYPES = [ 'image' ];
 
         return (
-            <Fragment>
+			<Fragment>
 				<InspectorControls>
 					<PanelBody
 						title={ __( 'Settings', 'rather-simple-panzoom' ) }
@@ -79,12 +79,12 @@ export const settings = {
 		return (
 			<div { ...blockProps }>
 				<div class="panzoom-parent">
-					<div id="panzoom-element">
+					<div class="panzoom-element">
 						<img src={ url } />
 					</div>
 					<div class="panzoom-buttons">
-						<button id="zoomin-button"><span class="screen-reader-text">Zoom In</span></button>
-						<button id="zoomout-button"><span class="screen-reader-text">Zoom Out</span></button>
+						<button class="zoomin-button"><span class="screen-reader-text">Zoom In</span></button>
+						<button class="zoomout-button"><span class="screen-reader-text">Zoom Out</span></button>
 					</div>
 				</div>
 			</div>
