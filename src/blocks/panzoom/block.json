@@ -10,7 +10,11 @@
         "id": {
             "type": "integer",
 			"default": 0
-        }
+        },
+		"url": {
+			"type": "string",
+			"default": ""
+		}
     },
 	"supports": {
 		"spacing": {

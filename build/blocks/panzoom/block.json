@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "occ/rather-simple-panzoom",
+  "title": "Rather Simple Panzoom",
+  "description": "Display a panzoom.",
+  "textdomain": "rather-simple-panzoom",
+  "category": "common",
+  "attributes": {
+    "id": {
+      "type": "integer",
+      "default": 0
+    },
+    "url": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "editorStyle": "file:./index.css"
+}

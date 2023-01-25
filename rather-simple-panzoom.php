@@ -221,10 +221,7 @@ class Rather_Simple_Panzoom {
 
 		// Register the block by passing the location of block.json to register_block_type.
 		register_block_type(
-			__DIR__ . '/build/blocks/panzoom',
-			array(
-				'render_callback' => array( $this, 'render_block' ),
-			)
+			__DIR__ . '/build/blocks/panzoom'
 		);
 
 		// Load translations.
