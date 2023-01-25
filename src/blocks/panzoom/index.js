@@ -1,0 +1,97 @@
+/**
+ * WordPress dependencies
+ */
+import { __ } from '@wordpress/i18n';
+import { Fragment } from '@wordpress/element';
+import {
+    G,
+    Path,
+    SVG,
+    Disabled,
+    PanelBody,
+    SelectControl,
+} from '@wordpress/components';
+import { InspectorControls } from '@wordpress/block-editor';
+import { registerBlockType } from '@wordpress/blocks';
+import { useSelect } from '@wordpress/data';
+import ServerSideRender from '@wordpress/server-side-render';
+import metadata from "./block.json";
+
+import './editor.scss';
+import './style.scss';
+
+const { name } = metadata;
+
+/**
+ * Internal dependencies
+ */
+
+export const settings = {
+	icon: <SVG viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><Path fill="none" d="M0 0h24v24H0V0z" /><G><Path d="M20 4v12H8V4h12m0-2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 9.67l1.69 2.26 2.48-3.1L19 15H9zM2 6v14c0 1.1.9 2 2 2h14v-2H4V6H2z" /></G></SVG>,
+    
+    edit: ( props => {
+        const { attributes, className } = props;
+
+        const sliders = useSelect(
+            ( select ) => select( 'core' ).getEntityRecords( 'postType', 'slider', { per_page: -1, orderby: 'title', order: 'asc', _fields: 'id,title' } ),
+            []
+        );
+
+        const setID = value => {
+            props.setAttributes( { id: Number( value ) } );
+        };
+
+        if ( ! sliders ) {
+            return __( 'Loading...', 'rather-simple-panzoom' );
+        }
+
+        if ( sliders.length === 0 ) {
+            return __( 'No sliders found', 'rather-simple-panzoom' );
+        }
+
+        var options = [];
+        options.push( {
+            label: __( 'Select a slider...', 'rather-simple-panzoom' ),
+            value: ''
+        } );
+
+        for ( var i = 0; i < sliders.length; i++ ) {
+            options.push( {
+                label: sliders[i].title.raw,
+                value: sliders[i].id
+            } );
+        }
+
+        return (
+            <Fragment>
+				<InspectorControls>
+					<PanelBody
+						title={ __( 'Settings', 'rather-simple-panzoom' ) }
+					>
+                        <SelectControl
+                            label={ __( 'Select a slider:', 'rather-simple-panzoom' ) }
+                            value={ attributes.id }
+                            options={ options }
+                            onChange={ setID }
+                        />
+                    </PanelBody>
+                </InspectorControls>
+				<Disabled>
+					<ServerSideRender
+						block="occ/rather-simple-panzoom"
+						attributes={ attributes }
+						className={ className }
+					/>
+				</Disabled>
+            </Fragment>
+        );
+
+    } ),
+
+    save: () => {
+		return null;
+	},
+
+};
+
+registerBlockType( name, settings );
