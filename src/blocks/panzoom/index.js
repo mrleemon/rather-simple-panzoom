@@ -59,7 +59,12 @@ export const settings = {
 									{ !! url &&
 										<img src={ url } alt={ alt } />
 									}
-									<Button onClick={ open }>Open Media Library</Button>
+									<Button
+										label={ __( 'Open Media Library', 'rather-simple-panzoom' ) }
+										onClick={ open }
+									>
+										{ __( 'Open Media Library', 'rather-simple-panzoom' ) }
+									</Button>
 								</div>
 							) }
 						/>
