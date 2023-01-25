@@ -13,8 +13,8 @@
 				origin: '50% 0'
 			});
 
-			var zoomInButton = document.querySelector('.zoomin-button');
-			var zoomOutButton = document.querySelector('.zoomout-button');
+			var zoomInButton = elPanzoom.parentElement.querySelector('.zoomin-button');
+			var zoomOutButton = elPanzoom.parentElement.querySelector('.zoomout-button');
 
 			zoomInButton.addEventListener('click', panzoom.zoomIn);
 			zoomOutButton.addEventListener('click', panzoom.zoomOut);

@@ -30,12 +30,12 @@ export const settings = {
     edit: ( props ) => {
 		const blockProps = useBlockProps();
 		const {
-			attributes: { url, id },
+			attributes: { url, id, alt },
 			setAttributes,
 		} = props;
 
 		const setImage = ( media ) => {
-			setAttributes( { url: media.url, id: media.id } );
+			setAttributes( { url: media.url, id: media.id, alt: media.alt } );
 		};
 
 		const ALLOWED_MEDIA_TYPES = [ 'image' ];
@@ -57,7 +57,7 @@ export const settings = {
 							render={ ( { open } ) => (
 								<div>
 									{ !! url &&
-										<img src={ url } />
+										<img src={ url } alt={ alt } />
 									}
 									<Button onClick={ open }>Open Media Library</Button>
 								</div>
@@ -72,19 +72,23 @@ export const settings = {
 
     save: ( props ) => {
 		const {
-			attributes: { url, id },
+			attributes: { url, id, alt },
 		} = props;
 		const blockProps = useBlockProps.save();
 		
 		return (
 			<div { ...blockProps }>
-				<div class="panzoom-parent">
-					<div class="panzoom-element">
-						<img src={ url } />
+				<div className="panzoom-parent">
+					<div className="panzoom-element">
+						<img
+							className={ `wp-image-${ id }` }
+							src={ url }
+							alt={ alt }
+						/>
 					</div>
-					<div class="panzoom-buttons">
-						<button class="zoomin-button"><span class="screen-reader-text">Zoom In</span></button>
-						<button class="zoomout-button"><span class="screen-reader-text">Zoom Out</span></button>
+					<div className="panzoom-buttons">
+						<button className="zoomin-button"><span className="screen-reader-text">Zoom In</span></button>
+						<button className="zoomout-button"><span className="screen-reader-text">Zoom Out</span></button>
 					</div>
 				</div>
 			</div>

@@ -11,14 +11,14 @@
     	background-color: #fff;
 	}
 
-	#panzoom-element {
+	/*.panzoom-element {
     	height: 100%;
 	}
 
-	#panzoom-element img {
+	.panzoom-element img {
     	display: block;
     	margin: 0 auto;
-	}
+	}*/
 
 	.panzoom-buttons {
     	text-align: center;
@@ -37,14 +37,7 @@
 	}
 
 	.panzoom-buttons button::before {
-    	-moz-osx-font-smoothing: grayscale;
-    	-webkit-font-smoothing: antialiased;
     	display: inline-block;
-    	font-family: "gridicons";
-    	font-size: 12px;
-    	font-style: normal;
-    	font-weight: 400;
-    	font-variant: normal;
     	line-height: 1.1;
     	speak: none;
     	text-align: center;
@@ -53,16 +46,16 @@
     	vertical-align: baseline;
 	}
 
-	#zoomin-button::before {
-    	content: "\f1c4";
+	.zoomin-button::before {
+    	content: "+";
     	font-size: 24px;
 		line-height: 30px;
 		position: relative;
 		width: 100%;
 	}
 
-	#zoomout-button::before {
-		content: "\f1c5";
+	.zoomout-button::before {
+		content: "-";
 		font-size: 24px;
 		line-height: 30px;
 		position: relative;
