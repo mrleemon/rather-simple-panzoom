@@ -10,8 +10,10 @@ import {
 } from '@wordpress/components';
 import {
 	InspectorControls,
+	BlockControls,
 	MediaUploadCheck,
 	MediaPlaceholder,
+	MediaReplaceFlow,
 	useBlockProps
 } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
@@ -48,6 +50,16 @@ export const settings = {
 					>
 					</PanelBody>
 				</InspectorControls>
+				<BlockControls>
+					<MediaReplaceFlow
+						mediaId={id}
+						mediaUrl={url}
+						allowedTypes={['image']}
+						accept="image/*"
+						onSelect={setImage}
+						name={!url ? __('Add Image', 'rather-simple-panzoom') : __('Replace Image', 'rather-simple-panzoom')}
+					/>
+				</BlockControls>
 				<div {...blockProps}>
 					<MediaUploadCheck>
 						{url &&
@@ -57,17 +69,19 @@ export const settings = {
 								alt={alt}
 							/>
 						}
-						<MediaPlaceholder
-							accept="image/*"
-							allowedTypes={['image']}
-							onSelect={setImage}
-							value={id}
-							multiple={false}
-							handleUpload={true}
-							labels={
-								{ title: __('Panzoom Image', 'rather-simple-panzoom') }
-							}
-						/>
+						{!url &&
+							<MediaPlaceholder
+								accept="image/*"
+								allowedTypes={['image']}
+								onSelect={setImage}
+								value={id}
+								multiple={false}
+								handleUpload={true}
+								labels={
+									{ title: __('Panzoom Image', 'rather-simple-panzoom') }
+								}
+							/>
+						}
 					</MediaUploadCheck>
 				</div>
 			</>
