@@ -64,8 +64,8 @@ class Rather_Simple_Panzoom {
 		add_action( 'init', array( $this, 'register_block' ) );
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
-		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_assets' ) );
+		// add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
+		// add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_assets' ) );
 
 		add_shortcode( 'panzoom', array( $this, 'shortcode_panzoom' ) );
 
@@ -228,22 +228,6 @@ class Rather_Simple_Panzoom {
 		$script_handle = generate_block_asset_handle( 'occ/rather-simple-panzoom', 'editorScript' );
 		wp_set_script_translations( $script_handle, 'rather-simple-panzoom', plugin_dir_path( __FILE__ ) . 'languages' );
 
-	}
-
-	/**
-	 * Render block
-	 *
-	 * @param array  $attr     The block attributes.
-	 * @param string $content  The content.
-	 */
-	public function render_block( $attr, $content ) {
-		$html = '';
-
-		if ( $attr['id'] ) {
-			$html = $this->panzoom_markup( $attr['id'] );
-		}
-
-		return $html;
 	}
 
 }

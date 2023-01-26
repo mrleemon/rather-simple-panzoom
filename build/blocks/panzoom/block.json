@@ -3,7 +3,7 @@
   "apiVersion": 2,
   "name": "occ/rather-simple-panzoom",
   "title": "Rather Simple Panzoom",
-  "description": "Display a panzoom.",
+  "description": "Display a panzoom image.",
   "textdomain": "rather-simple-panzoom",
   "category": "common",
   "attributes": {
@@ -12,6 +12,10 @@
       "default": 0
     },
     "url": {
+      "type": "string",
+      "default": ""
+    },
+    "alt": {
       "type": "string",
       "default": ""
     }
