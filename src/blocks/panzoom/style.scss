@@ -30,32 +30,11 @@
     	color: #fff;
     	cursor: pointer;
     	z-index: 999;
-	}
-
-	.panzoom-buttons button::before {
-    	display: inline-block;
-    	line-height: 1.1;
-    	speak: none;
-    	text-align: center;
-    	text-decoration: inherit;
-    	text-transform: none;
-    	vertical-align: baseline;
-	}
-
-	.zoomin-button::before {
-    	content: "+";
-    	font-size: 24px;
-		line-height: 30px;
-		position: relative;
-		width: 100%;
-	}
-
-	.zoomout-button::before {
-		content: "-";
-		font-size: 24px;
-		line-height: 30px;
-		position: relative;
-		width: 100%;
+		svg {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
 	}
 
 }
