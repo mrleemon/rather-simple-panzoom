@@ -37,7 +37,6 @@ export const settings = {
 		} = props;
 
 		const setImage = (media) => {
-			console.log(media);
 			setAttributes({ url: media.url, id: media.id, alt: media.alt });
 		};
 
@@ -65,7 +64,9 @@ export const settings = {
 							value={id}
 							multiple={false}
 							handleUpload={true}
-							labels={{ title: __( 'Panzoom Image', 'rather-simple-panzoom') }}
+							labels={
+								{ title: __('Panzoom Image', 'rather-simple-panzoom') }
+							}
 						/>
 					</MediaUploadCheck>
 				</div>
