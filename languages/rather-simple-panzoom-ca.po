@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Rather Simple Panzoom\n"
-"POT-Creation-Date: 2023-01-26 13:49+0100\n"
-"PO-Revision-Date: 2023-01-26 13:50+0100\n"
+"POT-Creation-Date: 2023-01-27 07:18+0100\n"
+"PO-Revision-Date: 2023-01-27 07:19+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -22,15 +22,15 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 
-#: src/blocks/panzoom/index.js:49
+#: src/blocks/panzoom/index.js:48
 msgid "Settings"
 msgstr "Opcions"
 
-#: src/blocks/panzoom/index.js:60
+#: src/blocks/panzoom/index.js:59
 msgid "Add Image"
 msgstr "Afegeix una imatge"
 
-#: src/blocks/panzoom/index.js:60
+#: src/blocks/panzoom/index.js:59
 msgid "Replace Image"
 msgstr "Reemplaça la imatge"
 

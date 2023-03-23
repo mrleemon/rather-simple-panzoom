@@ -192,15 +192,15 @@ class Rather_Simple_Panzoom {
 	public function panzoom_markup( $id ) {
 		$html = '<!-- Begin panzoom markup -->
 				<div class="panzoom-parent">
-                <div id="panzoom-element">
-                    <?php RickyDavila\DBContenidos::showContenido( $conexion, 11, "cast" ); ?>
-                </div>
+				<div id="panzoom-element">
+					<?php RickyDavila\DBContenidos::showContenido( $conexion, 11, "cast" ); ?>
+				</div>
 
-                <div class="panzoom-buttons">
-                    <button id="zoomin-button"><span class="screen-reader-text">Zoom In</span></button>
-                    <button id="zoomout-button"><span class="screen-reader-text">Zoom Out</span></button>
-                </div>
-            </div>
+				<div class="panzoom-buttons">
+					<button id="zoomin-button"><span class="screen-reader-text">Zoom In</span></button>
+					<button id="zoomout-button"><span class="screen-reader-text">Zoom Out</span></button>
+				</div>
+			</div>
 			<!-- End panzoom markup -->';
 
 		return $html;
