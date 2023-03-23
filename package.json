@@ -4,26 +4,26 @@
   "license": "GPL-2.0-or-later",
   "main": "build/index.js",
   "dependencies": {
-    "npm-check-updates": "^16.6.3"
+	"npm-check-updates": "^16.8.0"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^25.2.0",
-    "po2json": "^1.0.0-beta-2"
+	"@wordpress/scripts": "^26.0.0",
+	"po2json": "^1.0.0-beta-2"
   },
   "scripts": {
-    "build": "wp-scripts build",
-    "check-engines": "wp-scripts check-engines",
-    "check-licenses": "wp-scripts check-licenses",
-    "format": "wp-scripts format",
-    "lint:css": "wp-scripts lint-style",
-    "lint:js": "wp-scripts lint-js",
-    "lint:md:docs": "wp-scripts lint-md-docs",
-    "lint:pkg-json": "wp-scripts lint-pkg-json",
-    "packages-update": "wp-scripts packages-update",
-    "plugin-zip": "wp-scripts plugin-zip",
-    "start": "wp-scripts start",
-    "test:e2e": "wp-scripts test-e2e",
-    "test:unit": "wp-scripts test-unit-js",
-    "i18n": "po2json languages/rather-simple-panzoom-es_ES.po languages/rather-simple-panzoom-es_ES-occ-rather-simple-panzoom-editor-script.json -f jed && po2json languages/rather-simple-panzoom-ca.po languages/rather-simple-panzoom-ca-occ-rather-simple-panzoom-editor-script.json -f jed"
+	"build": "wp-scripts build",
+	"check-engines": "wp-scripts check-engines",
+	"check-licenses": "wp-scripts check-licenses",
+	"format": "wp-scripts format",
+	"lint:css": "wp-scripts lint-style",
+	"lint:js": "wp-scripts lint-js",
+	"lint:md:docs": "wp-scripts lint-md-docs",
+	"lint:pkg-json": "wp-scripts lint-pkg-json",
+	"packages-update": "wp-scripts packages-update",
+	"plugin-zip": "wp-scripts plugin-zip",
+	"start": "wp-scripts start",
+	"test:e2e": "wp-scripts test-e2e",
+	"test:unit": "wp-scripts test-unit-js",
+	"i18n": "po2json languages/rather-simple-panzoom-es_ES.po languages/rather-simple-panzoom-es_ES-occ-rather-simple-panzoom-editor-script.json -f jed && po2json languages/rather-simple-panzoom-ca.po languages/rather-simple-panzoom-ca-occ-rather-simple-panzoom-editor-script.json -f jed"
   }
 }
