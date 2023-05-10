@@ -15,7 +15,9 @@ import {
 	MediaReplaceFlow,
 	useBlockProps
 } from '@wordpress/block-editor';
+import { useRef, useEffect } from '@wordpress/element';
 import { registerBlockType } from '@wordpress/blocks';
+import Panzoom from '@panzoom/panzoom';
 import metadata from "./block.json";
 
 import './editor.scss';
@@ -32,6 +34,7 @@ export const settings = {
 	
 	edit: (props) => {
 		const blockProps = useBlockProps();
+		const ref = useRef();
 		const {
 			attributes: { url, id, alt },
 			setAttributes,
@@ -40,6 +43,24 @@ export const settings = {
 		const setImage = (media) => {
 			setAttributes({ url: media.url, id: media.id, alt: media.alt });
 		};
+
+		useEffect( () => {
+			if ( ref.current ) {
+				/*const d3RootElement = d3.select(ref.current);
+				renderMap( d3RootElement );*/
+				var elPanzoom = document.querySelector('.panzoom-element');
+				if (elPanzoom) {
+					var panzoom = Panzoom(elPanzoom, {
+						minScale: 1.1,
+						maxScale: 5,
+						startScale: 1.1,
+						animate: true,
+						duration: 1000,
+						origin: '50% 0'
+					});
+				}
+			}
+		}, [])
 
 		return (
 			<>
@@ -62,11 +83,16 @@ export const settings = {
 				<div {...blockProps}>
 					<MediaUploadCheck>
 						{url &&
-							<img
-								className={`wp-image-${id}`}
-								src={url}
-								alt={alt}
-							/>
+							<div className="panzoom-parent">
+								<div className="panzoom-element">
+									<img
+										className={`wp-image-${id}`}
+										src={url}
+										alt={alt}
+										ref={ref}
+									/>
+								</div>
+							</div>
 						}
 						{!url &&
 							<MediaPlaceholder
