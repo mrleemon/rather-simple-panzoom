@@ -2,9 +2,8 @@
 
 	document.addEventListener('DOMContentLoaded', function (e) {
 
-		var elPanzoom = document.querySelector('.panzoom-element');
-		if (elPanzoom) {
-			var panzoom = Panzoom(elPanzoom, {
+		document.querySelectorAll('.panzoom-element').forEach(function (item) {
+			var panzoom = Panzoom(item, {
 				minScale: 1.1,
 				maxScale: 5,
 				startScale: 1.1,
@@ -13,14 +12,15 @@
 				origin: '50% 0'
 			});
 
-			var zoomInButton = elPanzoom.parentElement.querySelector('.zoomin-button');
-			var zoomOutButton = elPanzoom.parentElement.querySelector('.zoomout-button');
+			var zoomInButton = item.parentElement.querySelector('.zoomin-button');
+			var zoomOutButton = item.parentElement.querySelector('.zoomout-button');
 
 			zoomInButton.addEventListener('click', panzoom.zoomIn);
 			zoomOutButton.addEventListener('click', panzoom.zoomOut);
 
-			elPanzoom.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
-		}
+			item.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
+		});
+		
 	});
 
 })();
