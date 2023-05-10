@@ -46,6 +46,7 @@ export const settings = {
 
 		useEffect( () => {
 			if ( ref.current ) {
+				// The Panzoom constructor is called when a new block is added and an image is selected/replaced.
 				var panzoom = Panzoom(ref.current, {
 					minScale: 1.1,
 					maxScale: 5,
@@ -55,7 +56,7 @@ export const settings = {
 					origin: '50% 0'
 				});
 			}
-		}, []);
+		}, [url]);
 
 		return (
 			<>
