@@ -46,19 +46,14 @@ export const settings = {
 
 		useEffect( () => {
 			if ( ref.current ) {
-				/*const d3RootElement = d3.select(ref.current);
-				renderMap( d3RootElement );*/
-				var elPanzoom = document.querySelector('.panzoom-element');
-				if (elPanzoom) {
-					var panzoom = Panzoom(elPanzoom, {
-						minScale: 1.1,
-						maxScale: 5,
-						startScale: 1.1,
-						animate: true,
-						duration: 1000,
-						origin: '50% 0'
-					});
-				}
+				var panzoom = Panzoom(ref.current, {
+					minScale: 1.1,
+					maxScale: 5,
+					startScale: 1.1,
+					animate: true,
+					duration: 1000,
+					origin: '50% 0'
+				});
 			}
 		}, [])
 
@@ -84,12 +79,11 @@ export const settings = {
 					<MediaUploadCheck>
 						{url &&
 							<div className="panzoom-parent">
-								<div className="panzoom-element">
+								<div className="panzoom-element" ref={ref}>
 									<img
 										className={`wp-image-${id}`}
 										src={url}
 										alt={alt}
-										ref={ref}
 									/>
 								</div>
 							</div>
