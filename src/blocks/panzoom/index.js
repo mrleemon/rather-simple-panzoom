@@ -55,7 +55,7 @@ export const settings = {
 					origin: '50% 0'
 				});
 			}
-		}, [])
+		}, []);
 
 		return (
 			<>
