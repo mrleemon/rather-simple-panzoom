@@ -63,12 +63,6 @@ class Rather_Simple_Panzoom {
 		add_action( 'init', array( $this, 'load_language' ) );
 		add_action( 'init', array( $this, 'register_block' ) );
 
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-		// add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
-		// add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_assets' ) );
-
-		add_shortcode( 'panzoom', array( $this, 'shortcode_panzoom' ) );
-
 	}
 
 	/**
@@ -86,125 +80,6 @@ class Rather_Simple_Panzoom {
 	 */
 	public function load_language() {
 		load_plugin_textdomain( 'rather-simple-panzoom', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-	}
-
-	/**
-	 * Enqueue scripts
-	 */
-	public function enqueue_scripts() {
-		// Load styles.
-		wp_enqueue_style(
-			'rather-simple-panzoom-css',
-			plugins_url( '/style.css', __FILE__ ),
-			array(),
-			filemtime( plugin_dir_path( __FILE__ ) . '/style.css' )
-		);
-
-		// Load scripts.
-		wp_enqueue_script(
-			'panzoom',
-			plugins_url( '/assets/js/panzoom.min.js', __FILE__ ),
-			array(),
-			filemtime( plugin_dir_path( __FILE__ ) . '/assets/js/panzoom.min.js' ),
-			true
-		);
-		wp_enqueue_script(
-			'rather-simple-panzoom-frontend',
-			plugins_url( '/assets/js/frontend.js', __FILE__ ),
-			array( 'panzoom' ),
-			filemtime( plugin_dir_path( __FILE__ ) . '/assets/js/frontend.js' ),
-			true
-		);
-	}
-
-	/**
-	 * Enqueues block assets
-	 */
-	public function enqueue_block_editor_assets() {
-
-		// Load scripts.
-		wp_enqueue_script(
-			'panzoom-js',
-			plugins_url( '/assets/js/panzoom.min.js', __FILE__ ),
-			array(),
-			filemtime( plugin_dir_path( __FILE__ ) . '/assets/js/panzoom.min.js' ),
-			false
-		);
-		wp_enqueue_script(
-			'backend',
-			plugins_url( '/assets/js/frontend.js', __FILE__ ),
-			array( 'panzoom-js' ),
-			filemtime( plugin_dir_path( __FILE__ ) . '/assets/js/frontend.js' ),
-			false
-		);
-
-	}
-
-	/**
-	 * Shortcode panzoom
-	 *
-	 * @param array $attr  An array of attributes.
-	 */
-	public function shortcode_panzoom( $attr ) {
-		$html = $this->shortcode_atts( $attr );
-		return $html;
-	}
-
-	/**
-	 * Shortcode attributes
-	 *
-	 * @param array $attr  An array of attributes.
-	 */
-	public function shortcode_atts( $attr ) {
-		$atts = shortcode_atts(
-			array(
-				'id' => '',
-			),
-			$attr,
-			'panzoom'
-		);
-		$id   = $atts['id'];
-		$html = '';
-		if ( 'panzoom' === get_post_type( $id ) ) {
-			$html = $this->panzoom_markup( $id );
-		}
-		return $html;
-	}
-
-	/**
-	 * Show panzoom
-	 *
-	 * @param integer $id  The panzoom ID.
-	 */
-	public function show_panzoom( $id ) {
-		$html = '';
-		if ( 'panzoom' === get_post_type( $id ) ) {
-			$html = $this->panzoom_markup( $id );
-		}
-		echo $html;
-	}
-
-	/**
-	 * Panzoom markup
-	 *
-	 * @param integer $id  The panzoom ID.
-	 */
-	public function panzoom_markup( $id ) {
-		$html = '<!-- Begin panzoom markup -->
-				<div class="panzoom-parent">
-				<div id="panzoom-element">
-					<?php RickyDavila\DBContenidos::showContenido( $conexion, 11, "cast" ); ?>
-				</div>
-
-				<div class="panzoom-buttons">
-					<button id="zoomin-button"><span class="screen-reader-text">Zoom In</span></button>
-					<button id="zoomout-button"><span class="screen-reader-text">Zoom Out</span></button>
-				</div>
-			</div>
-			<!-- End panzoom markup -->';
-
-		return $html;
-
 	}
 
 	/**

@@ -1,3 +1,5 @@
+import Panzoom from '@panzoom/panzoom';
+
 (function () {
 
 	document.addEventListener('DOMContentLoaded', function (e) {
