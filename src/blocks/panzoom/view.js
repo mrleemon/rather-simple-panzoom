@@ -4,7 +4,7 @@ import Panzoom from '@panzoom/panzoom';
 
 	document.addEventListener('DOMContentLoaded', function (e) {
 
-		document.querySelectorAll('.panzoom-element').forEach(function (item) {
+		document.querySelectorAll('.wp-block-occ-rather-simple-panzoom .panzoom-element').forEach(function (item) {
 			var panzoom = Panzoom(item, {
 				minScale: 1.1,
 				maxScale: 5,
