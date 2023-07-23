@@ -5,7 +5,7 @@
 	"title": "Rather Simple Panzoom",
 	"description": "Display a panzoom image.",
 	"textdomain": "rather-simple-panzoom",
-	"category": "common",
+	"category": "media",
 	"attributes": {
 		"id": {
 			"type": "integer",

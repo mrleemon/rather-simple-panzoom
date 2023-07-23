@@ -61,7 +61,23 @@ export const settings = {
 					duration: 1000,
 					origin: '50% 0'
 				});
+
+				var zoomInButton = ref.current.parentElement.querySelector('.zoomin-button');
+				var zoomOutButton = ref.current.parentElement.querySelector('.zoomout-button');
+
+				zoomInButton.addEventListener('click', panzoom.zoomIn);
+				zoomOutButton.addEventListener('click', panzoom.zoomOut);
+
+				ref.current.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
 			}
+
+			return () => {
+				if (panzoom) {
+					// Destroy Panzoom instance after every render.
+					panzoom.destroy();
+				}
+			}
+
 		}, [url]);
 
 		return (
