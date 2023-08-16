@@ -28,7 +28,7 @@ import { registerBlockType } from '@wordpress/blocks';
  * Internal dependencies
  */
 import Panzoom from '@panzoom/panzoom';
-import metadata from "./block.json";
+import metadata from './block.json';
 
 import './editor.scss';
 import './style.scss';
