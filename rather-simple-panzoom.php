@@ -50,7 +50,6 @@ class Rather_Simple_Panzoom {
 		}
 
 		return self::$instance;
-
 	}
 
 	/**
@@ -62,7 +61,6 @@ class Rather_Simple_Panzoom {
 
 		add_action( 'init', array( $this, 'load_language' ) );
 		add_action( 'init', array( $this, 'register_block' ) );
-
 	}
 
 	/**
@@ -102,9 +100,7 @@ class Rather_Simple_Panzoom {
 		// Load translations.
 		$script_handle = generate_block_asset_handle( 'occ/rather-simple-panzoom', 'editorScript' );
 		wp_set_script_translations( $script_handle, 'rather-simple-panzoom', plugin_dir_path( __FILE__ ) . 'languages' );
-
 	}
-
 }
 
 add_action( 'plugins_loaded', array( Rather_Simple_Panzoom::get_instance(), 'plugin_setup' ) );
