@@ -1,8 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Rather Simple Panzoom\n"
-"POT-Creation-Date: 2023-01-26 13:49+0100\n"
-"PO-Revision-Date: 2023-01-26 13:49+0100\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/rather-simple-"
+"panzoom\n"
+"POT-Creation-Date: 2024-06-20T08:06:03+00:00\n"
+"PO-Revision-Date: 2024-06-20 10:07+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -22,30 +24,52 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
 
-#: src/blocks/panzoom/index.js:49
-msgid "Settings"
-msgstr "Ajustes"
-
-#: src/blocks/panzoom/index.js:60
-msgid "Add Image"
-msgstr "Añadir imagen"
-
-#: src/blocks/panzoom/index.js:60
-msgid "Replace Image"
-msgstr "Reemplazar imagen"
-
-#. Plugin Name of the plugin/theme
+#. Plugin Name of the plugin
 msgid "Rather Simple Panzoom"
 msgstr ""
 
-#. Description of the plugin/theme
+#. Description of the plugin
 msgid "A really simple panzoom"
 msgstr ""
 
-#. Author of the plugin/theme
+#. Author of the plugin
 msgid "Oscar Ciutat"
 msgstr ""
 
-#. Author URI of the plugin/theme
+#. Author URI of the plugin
 msgid "http://oscarciutat.com/code/"
 msgstr ""
+
+#: build/blocks/panzoom/index.js:1 src/blocks/panzoom/index.js:121
+msgid "Settings"
+msgstr "Ajustes"
+
+#: build/blocks/panzoom/index.js:1 src/blocks/panzoom/index.js:132
+msgid "Replace Image"
+msgstr "Reemplazar imagen"
+
+#: build/blocks/panzoom/index.js:1 src/blocks/panzoom/index.js:132
+msgid "Add Image"
+msgstr "Añadir imagen"
+
+#: build/blocks/panzoom/index.js:1 src/blocks/panzoom/index.js:148
+msgid "Zoom In"
+msgstr "Acercar"
+
+#: build/blocks/panzoom/index.js:1 src/blocks/panzoom/index.js:152
+msgid "Zoom Out"
+msgstr "Alejar"
+
+#: build/blocks/panzoom/index.js:1 src/blocks/panzoom/index.js:167
+msgid "Panzoom Image"
+msgstr "Imagen Panzoom"
+
+#: build/blocks/panzoom/block.json src/blocks/panzoom/block.json
+msgctxt "block title"
+msgid "Rather Simple Panzoom"
+msgstr ""
+
+#: build/blocks/panzoom/block.json src/blocks/panzoom/block.json
+msgctxt "block description"
+msgid "Display a panzoom image."
+msgstr "Muestra una imagen de panzoom."
