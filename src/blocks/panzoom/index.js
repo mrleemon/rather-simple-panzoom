@@ -132,9 +132,9 @@ export const settings = {
 						name={!url ? __('Add Image', 'rather-simple-panzoom') : __('Replace Image', 'rather-simple-panzoom')}
 					/>
 				</BlockControls>
-				<div {...blockProps}>
-					<MediaUploadCheck>
-						{url &&
+				<MediaUploadCheck>
+					{url ?
+						<div {...blockProps}>
 							<div className="panzoom-parent">
 								<div className="panzoom-element" ref={ref}>
 									<img
@@ -154,8 +154,9 @@ export const settings = {
 									</button>
 								</div>
 							</div>
-						}
-						{!url &&
+						</div>
+						:
+						<div {...blockProps}>
 							<MediaPlaceholder
 								accept="image/*"
 								allowedTypes={['image']}
@@ -167,9 +168,9 @@ export const settings = {
 									{ title: __('Panzoom Image', 'rather-simple-panzoom') }
 								}
 							/>
-						}
-					</MediaUploadCheck>
-				</div>
+						</div>
+					}
+				</MediaUploadCheck>
 			</>
 		);
 
