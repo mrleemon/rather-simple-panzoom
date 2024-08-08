@@ -3,7 +3,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import {
-    PanelBody,
+	PanelBody,
 } from '@wordpress/components';
 import {
 	InspectorControls,
@@ -36,7 +36,11 @@ const Edit = (props) => {
 	} = props;
 
 	const setImage = (media) => {
-		setAttributes({ url: media.url, id: media.id, alt: media.alt });
+		setAttributes({
+			url: media.url,
+			id: media.id,
+			alt: media.alt
+		});
 	};
 
 	/*useEffect( () => {
