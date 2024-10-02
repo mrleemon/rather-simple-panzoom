@@ -18,22 +18,23 @@
 
 	.panzoom-buttons {
 		text-align: center;
-	}
 
-	.panzoom-buttons button {
-		position: relative;
-		width: 40px;
-		height: 40px;
-		background-color: #000;
-		border: 0;
-		border-radius: 100%;
-		color: #fff;
-		cursor: pointer;
-		z-index: 999;
-		svg {
-			position: absolute;
-			top: 0;
-			left: 0;
+		button {
+			position: relative;
+			width: 40px;
+			height: 40px;
+			background-color: #000;
+			border: 0;
+			border-radius: 100%;
+			color: #fff;
+			cursor: pointer;
+			z-index: 999;
+
+			svg {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
 		}
 	}
 

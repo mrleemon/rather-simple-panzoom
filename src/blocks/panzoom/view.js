@@ -20,9 +20,12 @@ import Panzoom from '@panzoom/panzoom';
 			zoomInButton.addEventListener('click', panzoom.zoomIn);
 			zoomOutButton.addEventListener('click', panzoom.zoomOut);
 
-			item.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
-		});
-		
+			item.parentElement.addEventListener('wheel', function (e) {
+				if (!e.ctrlKey) return
+				panzoom.zoomWithWheel(e)
+			});
 	});
 
-})();
+});
+
+}) ();

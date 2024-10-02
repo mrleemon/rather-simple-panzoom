@@ -90,7 +90,10 @@ const Edit = (props) => {
 		zoomInButton.addEventListener('click', panzoom.zoomIn);
 		zoomOutButton.addEventListener('click', panzoom.zoomOut);
 
-		element.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
+		element.parentElement.addEventListener('wheel', function (e) {
+			if (!e.ctrlKey) return
+			panzoom.zoomWithWheel(e)
+		});
 
 		return () => {
 			if (panzoom) {
