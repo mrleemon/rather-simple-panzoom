@@ -9,6 +9,7 @@
  * Author: Oscar Ciutat
  * Author URI: http://oscarciutat.com/code/
  * Text Domain: rather-simple-panzoom
+ * Domain Path: /languages
  * Description: A really simple panzoom
  * License: GPLv2 or later
  *
