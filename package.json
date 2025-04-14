@@ -5,10 +5,10 @@
   "main": "build/index.js",
   "dependencies": {
     "@panzoom/panzoom": "^4.6.0",
-    "npm-check-updates": "^17.1.15"
+    "npm-check-updates": "^17.1.18"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^30.13.0"
+    "@wordpress/scripts": "^30.15.0"
   },
   "scripts": {
     "build": "wp-scripts build",
