@@ -4,11 +4,11 @@
   "license": "GPL-2.0-or-later",
   "main": "build/index.js",
   "dependencies": {
-    "@panzoom/panzoom": "^4.6.0",
-    "npm-check-updates": "^19.1.2"
+    "@panzoom/panzoom": "^4.6.1",
+    "npm-check-updates": "^19.3.1"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^30.27.0"
+    "@wordpress/scripts": "^31.2.0"
   },
   "scripts": {
     "build": "wp-scripts build",
