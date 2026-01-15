@@ -10,7 +10,7 @@
  * Author URI: http://oscarciutat.com/code/
  * Text Domain: rather-simple-panzoom
  * Domain Path: /languages
- * Description: A really simple panzoom
+ * Description: A really simple block to add panning and zooming functionality to an image.
  * License: GPLv2 or later
  *
  * This program is free software; you can redistribute it and/or modify

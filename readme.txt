@@ -1,17 +1,17 @@
 === Rather Simple Panzoom ===
 Contributors: leemon
-Tags: carousel, images, media
+Tags: images, media, pan, zoom
 Requires at least: 6.8
 Tested up to: 6.8
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A really simple panzoom
+A really simple block to add panning and zooming functionality to an image
 
 == Description ==
 
-A really simple panzoom
+A really simple block to add panning and zooming functionality to an image
 
 This plugin is experimental and is provided with no support or warranty. 
 
