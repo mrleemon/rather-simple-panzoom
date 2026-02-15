@@ -1,0 +1,43 @@
+diff --git a/node_modules/@panzoom/panzoom/dist/panzoom.es.js b/node_modules/@panzoom/panzoom/dist/panzoom.es.js
+index 49eeb4c..d9d511a 100644
+--- a/node_modules/@panzoom/panzoom/dist/panzoom.es.js
++++ b/node_modules/@panzoom/panzoom/dist/panzoom.es.js
+@@ -295,9 +295,11 @@ function getDistance(pointers) {
+  * Panzoom requires this so events work properly
+  */
+ function isAttached(node) {
++    var { ownerDocument } = node;
+     var currentNode = node;
+     while (currentNode && currentNode.parentNode) {
+-        if (currentNode.parentNode === document)
++        //if (currentNode.parentNode === document)
++        if (currentNode.parentNode === ownerDocument)
+             return true;
+         currentNode =
+             currentNode.parentNode instanceof ShadowRoot
+@@ -751,15 +753,21 @@ function Panzoom(elem, options) {
+             return;
+         }
+         bound = true;
++        var { ownerDocument } = elem;
+         onPointer('down', options.canvas ? parent : elem, handleDown);
+-        onPointer('move', document, handleMove, { passive: true });
+-        onPointer('up', document, handleUp, { passive: true });
++        //onPointer('move', document, handleMove, { passive: true });
++        //onPointer('up', document, handleUp, { passive: true });
++        onPointer('move', ownerDocument, handleMove, { passive: true });
++        onPointer('up', ownerDocument, handleUp, { passive: true });
+     }
+     function destroy() {
+         bound = false;
++        var { ownerDocument } = elem;
+         destroyPointer('down', options.canvas ? parent : elem, handleDown);
+-        destroyPointer('move', document, handleMove);
+-        destroyPointer('up', document, handleUp);
++        //destroyPointer('move', document, handleMove);
++        //destroyPointer('up', document, handleUp);
++        destroyPointer('move', ownerDocument, handleMove);
++        destroyPointer('up', ownerDocument, handleUp);
+     }
+     if (!options.noBind) {
+         bind();
