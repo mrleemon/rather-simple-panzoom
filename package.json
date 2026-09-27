@@ -7,8 +7,8 @@
     "@panzoom/panzoom": "^4.6.2"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^34.0.0",
-    "dir-archiver": "^3.0.2",
+    "@wordpress/scripts": "^36.0.0",
+    "dir-archiver": "^4.0.0",
     "patch-package": "^8.0.1"
   },
   "scripts": {
@@ -26,7 +26,7 @@
     "test:unit": "wp-scripts test-unit-js",
     "make-pot": "wp i18n make-pot . languages/rather-simple-panzoom.pot",
     "make-json": "wp i18n make-json languages --no-purge",
-    "bundle": "dir-archiver --includebasedir --src . --dest ../rather-simple-panzoom.zip --exclude .git .gitattributes .gitignore node_modules package-lock.json package.json",
+    "bundle": "dir-archiver write --include-base-directory --source . --output ../rather-simple-panzoom.zip --exclude .git --exclude .gitattributes --exclude .gitignore --exclude node_modules --exclude package-lock.json --exclude package.json",
     "postinstall": "patch-package"
   }
 }
